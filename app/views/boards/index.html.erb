@@ -1,0 +1,24 @@
+<h1>My Board List</h1>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  <% @boards.each do |board| %>
+     <tr>
+       <td>
+         <%= board.name %>
+       </td>
+       <td>
+         <%= board.description %>
+       </td>
+       <td>
+         <%= link_to "Edit", edit_board_url(board) %>
+         <%= link_to "Show", board_url(board) %>
+         <%= link_to "Delete", board_url(board), :method => :delete, :confirm => "Sure to delete?" %>
+       </td>
+     </tr>
+  <% end %>
+</table>

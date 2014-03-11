@@ -1,0 +1,9 @@
+<h1>Edit Board</h1>
+
+<%= form_for @board, {:url => board_url(@board), :html => {:method => :put}} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br /><br />
+    <%= f.label :description %>
+    <%= f.text_area :description %> <br /><br />
+    <%= f.submit  %>
+<% end %>
