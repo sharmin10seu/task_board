@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 #gem 'sqlite3'
 gem 'mysql2', '0.3.15'
 gem 'devise'
+gem 'will_paginate', '~> 3.0.5'
+gem "paperclip", "~> 4.1"
 
 # Gems used only for assets and not required
 # in production environments by default.

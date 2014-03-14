@@ -1,0 +1,35 @@
+<h1>Tasks List</h1>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Attachment</th>
+    <th></th>
+
+  </tr>
+  <% @tasks.each do |task| %>
+      <tr>
+        <td>
+          <%= task.name %>
+        </td>
+        <td>
+          <%= task.description %>
+        </td>
+        <td>
+          <%= task.status %>
+        </td>
+        <td>
+          <%= link_to task.doc.original_filename, task.doc.url if task.doc.present? %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_task_url(task) %>
+          <%= link_to "Show", task_url(task) %>
+          <%= link_to "Delete", task_url(task), :method => :delete, :confirm => "Sure to delete?" %>
+        </td>
+      </tr>
+  <% end %>
+</table><br>
+<%= will_paginate @tasks %><br>
+<%= link_to "New Task", new_task_url(:board_id => params[:board_id]) %>

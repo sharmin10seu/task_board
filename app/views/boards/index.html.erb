@@ -18,7 +18,10 @@
          <%= link_to "Edit", edit_board_url(board) %>
          <%= link_to "Show", board_url(board) %>
          <%= link_to "Delete", board_url(board), :method => :delete, :confirm => "Sure to delete?" %>
+         <%= link_to "Tasks", tasks_url(:board_id => board.id) %>
        </td>
      </tr>
   <% end %>
 </table>
+
+<%= link_to "New Board", new_board_url %>
