@@ -19,10 +19,10 @@
         </td>
         <td>
           <%= task.status %>
-        </td>
+        </td>        </td>
+
         <td>
           <%= link_to task.doc.original_filename, task.doc.url if task.doc.present? %>
-        </td>
         <td>
           <%= link_to "Edit", edit_task_url(task) %>
           <%= link_to "Show", task_url(task) %>

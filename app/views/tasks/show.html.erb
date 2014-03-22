@@ -5,3 +5,20 @@
 <p>
   <b>Description :</b> <%= @task.description %>
 </p>
+
+<p>
+  <strong>Comments:</strong>
+  <% @task.comments.each do |comment| %>
+   <div style="border: 1px solid #CCCCCC;padding: 7px;">
+     <%= comment.description %>
+   </div>
+  <% end %>
+</p>
+
+<%= form_for Comment.new, :url => comments_url, :html => {:method => :post} do |f| %>
+  <%= f.label :description, 'Comment' %>
+  <%= f.text_area :description, :style => "width: 380px;height: 80px" %> <br /><br />
+  <%= f.hidden_field :task_id, :value => @task.id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit %>
+<% end %>
