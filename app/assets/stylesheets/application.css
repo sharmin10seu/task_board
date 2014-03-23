@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+.board-title{
+    text-decoration: underline;
+}
+.action{
+    margin-bottom: 5px !important;
+}

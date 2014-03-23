@@ -1,6 +1,6 @@
 <h1>My Board List</h1>
 
-<table border="1" width="100%">
+<table width="100%" class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -9,19 +9,16 @@
   <% @boards.each do |board| %>
      <tr>
        <td>
-         <%= board.name %>
+         <%= link_to board.name, tasks_url(:board_id => board.id), :class => 'board-title' %>
        </td>
        <td>
          <%= board.description %>
        </td>
-       <td>
-         <%= link_to "Edit", edit_board_url(board) %>
-         <%= link_to "Show", board_url(board) %>
-         <%= link_to "Delete", board_url(board), :method => :delete, :confirm => "Sure to delete?" %>
-         <%= link_to "Tasks", tasks_url(:board_id => board.id) %>
+       <td style="width: 30%;">
+         <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_board_url(board), {:class => 'btn btn-success action'} %>
+         <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> Show'.html_safe, board_url(board), :class => 'btn btn-info action' %>
+         <%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete'.html_safe, board_url(board), :method => :delete, :confirm => "Sure to delete?", :class => 'btn btn-danger action' %>
        </td>
      </tr>
   <% end %>
 </table>
-
-<%= link_to "New Board", new_board_url %>
