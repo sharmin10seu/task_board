@@ -1,4 +1,4 @@
-<h1>Tasks List</h1>
+<h1>Tasks List in <%= @board.name %></h1>
 
 <table border="1" width="100%">
   <tr>
@@ -15,11 +15,13 @@
           <%= task.name %>
         </td>
         <td>
-          <%= task.description %>
+          <%= task.description[0..100] %>...
+
         </td>
         <td>
           <%= task.status %>
-        </td>        </td>
+
+         </td>
 
         <td>
           <%= link_to task.doc.original_filename, task.doc.url if task.doc.present? %>

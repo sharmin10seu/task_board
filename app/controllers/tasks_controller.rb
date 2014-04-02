@@ -2,11 +2,11 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @task.board_id = params[:board_id]
   end
 
   def create
     @task = Task.new(params[:task])
+    @task.board_id = session[:board_id]
     if @task.save
       redirect_to tasks_url, :notice => "Your Task has been created successfully!"
     else
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
     @board = Board.find(session[:board_id])
     @tasks = @board.tasks
-    @tasks =Task.paginate(:page => params[:page], :per_page => 3)
+    @tasks = @tasks.paginate(:page => params[:page], :per_page => 3)
     #@tasks = Task.where("board_id=?", params[:board_id])
   end
 
