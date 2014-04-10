@@ -3,6 +3,7 @@ TaskBoard::Application.routes.draw do
   resources :boards
   resources :tasks
   resources :comments
+  match 'assigned_to_me', :to => 'tasks#assigned_to_me', :as => 'assigned_to_me'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

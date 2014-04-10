@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :boards
   has_many :comments, :dependent => :destroy
 
-  has_and_belongs_to_many :tasks
+  has_many :task_users
+  has_many :tasks, :through => :task_users
+
 
 end

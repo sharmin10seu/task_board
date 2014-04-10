@@ -15,10 +15,12 @@
   <% end %>
 </p>
 
+<% if user_signed_in? %>
 <%= form_for Comment.new, :url => comments_url, :html => {:method => :post} do |f| %>
   <%= f.label :description, 'Comment' %>
   <%= f.text_area :description, :style => "width: 380px;height: 80px" %> <br /><br />
   <%= f.hidden_field :task_id, :value => @task.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.submit %>
+<% end %>
 <% end %>
