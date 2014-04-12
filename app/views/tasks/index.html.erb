@@ -6,6 +6,7 @@
     <th>Description</th>
     <th>Status</th>
     <th>Attachment</th>
+    <th>Created At</th>
     <th></th>
 
   </tr>
@@ -25,6 +26,10 @@
 
         <td>
           <%= link_to task.doc.original_filename, task.doc.url if task.doc.present? %>
+        </td>
+        <td>
+          <%= task.created_at.strftime("%d %B, %Y @ %I:%M %p") %>
+        </td>
         <td>
           <%= link_to "Edit", edit_task_url(task) %>
           <%= link_to "Show", task_url(task) %>

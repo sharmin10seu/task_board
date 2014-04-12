@@ -5,8 +5,6 @@
     <%= f.label :description %>
     <%= f.text_area :description, :style => "width: 300px;height: 100px;" %> <br /><br />
 
-    <%= f.label :status %>
-    <%= f.collection_select :status, [['TODO','TODO'],['DOING','DOING'],['DONE','DONE']], :first, :last, {}, {} %><br /><br />
     <%= f.file_field :doc %> <br/><br/>
 
     <fieldset>

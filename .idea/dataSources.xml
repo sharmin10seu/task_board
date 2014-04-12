@@ -3,9 +3,8 @@
   <component name="DataSourceManagerImpl" format="xml" hash="60445656">
     <data-source source="LOCAL" name="Rails task_board: development" uuid="3bd2a7be-8633-4e0c-a74d-47e22e156376">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/task_board</jdbc-url>
-      <user-name>root</user-name>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:myapp_development</jdbc-url>
       <libraries />
     </data-source>
   </component>

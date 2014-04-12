@@ -7,6 +7,13 @@
 </p>
 
 <p>
+  <strong>Assigned On:</strong>
+  <% @task.users.each do |user| %>
+    <div><%= user.email %></div>
+  <% end %>
+</p>
+
+<p>
   <strong>Comments:</strong>
   <% @task.comments.each do |comment| %>
    <div style="border: 1px solid #CCCCCC;padding: 7px;">

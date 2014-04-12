@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     @task.board_id = session[:board_id]
+    @task.user = current_user
     if @task.save
       redirect_to tasks_url, :notice => "Your Task has been created successfully!"
     else
