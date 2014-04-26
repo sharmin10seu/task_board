@@ -1,5 +1,5 @@
 class AssignmentMailer < ActionMailer::Base
-  default from: "team@task-board.com"
+  default from: "team@task_board.com"
 
   def assignment_mail(task_user)
     @task_user = task_user

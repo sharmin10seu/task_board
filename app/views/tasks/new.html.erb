@@ -4,6 +4,10 @@
     <%= f.text_field :name %> <br /><br />
     <%= f.label :description %>
     <%= f.text_area :description, :style => "width: 300px; height: 100px;" %> <br /><br />
+    <%= f.label :due_time %>
+    <%= f.text_field :due_time, :value => @task.due_time ? @task.due_time.strftime("%Y-%m-%d") : '' %>
+    <%= f.text_field :task_time, :id=> 'task_time' %> <br /><br />
+
     <%= f.hidden_field :board_id %>
     <%= f.file_field :doc %>
     <br /><br />

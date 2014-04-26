@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+    $("#task_due_time").datepicker({ dateFormat: "yy-mm-dd" })
+    $("#task_time").timepicker({ 'timeFormat': 'h:i A' });
+})
