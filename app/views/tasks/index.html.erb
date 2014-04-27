@@ -7,6 +7,7 @@
     <th>Status</th>
     <th>Attachment</th>
     <th>Created At</th>
+    <th>Expire time At</th>
     <th></th>
 
   </tr>
@@ -29,6 +30,9 @@
         </td>
         <td>
           <%= task.created_at.strftime("%d %B, %Y @ %I:%M %p") %>
+        </td>
+        <td>
+          <%= task.due_time.present? ? task.due_time.strftime("%d %B, %Y @ %I:%M %p") : 'Not Yet set' %>
         </td>
         <td>
           <%= link_to "Edit", edit_task_url(task) %>

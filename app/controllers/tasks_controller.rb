@@ -49,6 +49,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    TaskMailer.task_deleted_mail(@task).deliver
     @task.destroy
     redirect_to tasks_url, :notice => "Your Task is Deleted Successfully"
   end

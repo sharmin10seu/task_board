@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140426160601) do
+ActiveRecord::Schema.define(:version => 20140427025040) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -33,15 +33,16 @@ ActiveRecord::Schema.define(:version => 20140426160601) do
     t.text     "name"
     t.text     "description"
     t.integer  "board_id"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-    t.string   "status",           :default => "TODO"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "status",               :default => "TODO"
     t.string   "doc_file_name"
     t.string   "doc_content_type"
     t.integer  "doc_file_size"
     t.datetime "doc_updated_at"
     t.integer  "user_id"
     t.datetime "due_time"
+    t.datetime "expired_mail_sent_at"
   end
 
   create_table "tasks_users", :force => true do |t|

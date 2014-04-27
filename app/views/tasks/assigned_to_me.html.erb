@@ -7,6 +7,7 @@
     <th>Board</th>
     <th>Status</th>
     <th>Attachment</th>
+    <th>Expire Time</th>
     <th></th>
 
   </tr>
@@ -31,7 +32,10 @@
 
         <td>
           <%= link_to task.doc.original_filename, task.doc.url if task.doc.present? %>
+        </td>
         <td>
+          <%= task.due_time.present? ? task.due_time.strftime("%d %B, %Y @ %I:%M %p") : 'Not Yet set' %>
+        </td>
           <%= link_to "Show", task_url(task) %>
         </td>
       </tr>
